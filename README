@@ -1,0 +1,35 @@
+### Introduction
+
+In this project, I fetch the currency data from an internet website and show these currencies on a grafana dashboard.
+To do this I used Python and Linux shell scripting combination.
+I used the procedure to install a grafana server on ubuntu 20.04 TLS.
+To fetch the data from internet I used Beautifulsoup and to correct and analysis of the data, I used shell scripting.
+I converted the fetched data into SQLite and I integrated this SQLIte db as data source for Grafana.
+
+
+Grafana SQLite Datasource is well described in the below link.
+
+https://github.com/fr-ser/grafana-sqlite-datasource
+
+#######################################################
+* Grafana Server is running on Ubuntu 20.04 TS over WSL
+* To stop start process we use /etc/init.d/grafana-server start/stop/status
+* To install python library we use "sudo apt-get install python3-pandas"
+########################################################
+
+### File and Scripts 
+
+zero_measurement.py      : This is my python script which I will use to recover the system from scratch. This will run once at first.
+regex_insert_zero.sh     : This shell script uses regex to correct the data to be used as a good data source.
+regex_diff_csv.sh        : This shell script uses regex to correct the data to be used as a good data source.
+insert_csv_list.csv      : This is the first fetch data to be inserted into db. This includes column names.
+for_win_importDB.py      : This is a script for windows, in case of an issue on ubuntu, this can be used on windows to troubleshoot.
+main.py                  : This is the main script and runs every minute.
+diff_insert_csv_list.csv : This is executed every minute and only contains the difference to be inserted into db.
+investment.db            : db file
+#######################################################
+### Jenkins
+Installed an ubuntu server on EC2 and Jenkins installed on the instance.
+https://pkg.jenkins.io/debian-stable/
+
+
