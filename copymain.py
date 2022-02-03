@@ -23,7 +23,7 @@ investment_value.insert(0, x)
 list_to_convert = [investment_value]
 #with open("insert_csv_list.csv","a",newline='') as file:
 
-file_path = os.path.relpath("/mnt/c/grafana/grafana_project/test.csv_list.csv")
+file_path = os.path.relpath("/home/ubuntu/grafana_project/test.csv_list.csv")
 with open(file_path, "a", newline='') as file:
     writer = csv.writer(file)
     writer.writerows(list_to_convert)

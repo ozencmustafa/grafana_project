@@ -23,7 +23,7 @@ investment_value.insert(0, x)
 list_to_convert = [investment_value]
 #with open("insert_csv_list.csv","a",newline='') as file:
 
-file_path = os.path.relpath("/mnt/c/grafana/grafana_project/diff_insert_csv_list.csv")
+file_path = os.path.relpath("/home/ubuntu/grafana_project/diff_insert_csv_list.csv")
 with open(file_path, "w", newline='') as file:
     writer = csv.writer(file)
     writer.writerows(list_to_convert)
@@ -31,12 +31,12 @@ with open(file_path, "w", newline='') as file:
 
 
 # Here in cmd we correct the numbering format. We replace ',' with '.' and also remove the $ sign from the data.
-cmd = '/mnt/c/grafana/grafana_project/regex_diff_csv.sh'
+cmd = '/home/ubuntu/grafana_project/regex_diff_csv.sh'
 os.system(cmd)
 
 
 ##################
-dbname = '/mnt/c/grafana/grafana_project/investment.db'
+dbname = '/home/ubuntu/grafana_project/investment.db'
 con = sqlite3.connect(dbname)
 cur = con.cursor()
 a_file = open(file_path)
